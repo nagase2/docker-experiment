@@ -1,0 +1,22 @@
+{
+    "run": [
+        {
+            "name": "docker-experiment",
+            "projectName": "docker-experiment",
+            "workingDirectory": "/Users/nagase/git-repository/docker-experiment",
+            "args": [],
+            "vmargs": [],
+            "preLaunchTask": ""
+        }
+    ],
+    "debug": [
+        {
+            "name": "docker-experiment",
+            "projectName": "docker-experiment",
+            "workingDirectory": "/Users/nagase/git-repository/docker-experiment",
+            "args": [],
+            "vmargs": [],
+            "preLaunchTask": ""
+        }
+    ]
+}
