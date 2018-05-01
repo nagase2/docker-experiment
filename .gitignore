@@ -2,5 +2,5 @@
 bin
 .Dockerfile.*
 .classpath
-logs/app.2018-04-30.log.tar.gz
-.sts4-cache/classpath-data.json
+.sts4-cache
+logs/

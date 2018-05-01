@@ -12,6 +12,7 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
 
 bootJar {
     baseName = 'gs-spring-boot'
@@ -26,17 +27,18 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-  compile("org.springframework.boot:spring-boot-devtools")
-  
-  
+  	//compile("org.springframework.boot:spring-boot-devtools")
     compile("org.springframework.boot:spring-boot-starter-web")
     // tag::actuator[]
-    compile("org.springframework.boot:spring-boot-starter-actuator")
+   // compile("org.springframework.boot:spring-boot-starter-actuator")
     // end::actuator[]
 
-    compile("org.springframework.boot:spring-boot-starter-web")
+
+//spring-boot-starter-tomcat
+
+
     compile 'org.springframework.boot:spring-boot-starter-data-jpa'
-    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    //compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
     compile 'org.projectlombok:maven-lombok-plugin:0.9.3.1'
     compile "org.projectlombok:lombok:1.16.2"
     compile 'org.postgresql:postgresql:9.4-1201-jdbc41'
@@ -45,11 +47,19 @@ dependencies {
 
 
     compile 'org.flywaydb:flyway-core'
-    compile 'org.springframework.boot:spring-boot-starter-security'
+   // compile 'org.springframework.boot:spring-boot-starter-security'
  
  
     // tag::tests[]
-    testCompile("org.springframework.boot:spring-boot-starter-test")
+    //testCompile("org.springframework.boot:spring-boot-starter-test")
     // end::tests[]
+
+      // Embedded Tomcat
+      providedRuntime "org.springframework.boot:spring-boot-starter-tomcat"
+      providedRuntime "org.apache.tomcat.embed:tomcat-embed-core"
+      providedRuntime "org.apache.tomcat.embed:tomcat-embed-jasper"
+      providedRuntime "org.apache.tomcat:tomcat-jdbc"
+      providedRuntime "org.apache.tomcat:tomcat-juli"
+
 }
 

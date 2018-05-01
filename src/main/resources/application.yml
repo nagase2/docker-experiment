@@ -40,4 +40,4 @@ spring.thymeleaf.prefix: classpath:/thymeleaf/
 spring.thymeleaf.suffix:
 spring.thymeleaf.viewNames: '*.html,*.xhtml'
 
-security.basic.enabled: false
+#security.basic.enabled: false
