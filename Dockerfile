@@ -1,15 +1,13 @@
+
 # Use latest jboss/base-jdk:8 image as the base
 FROM jboss/base-jdk:8
-
 # Set the WILDFLY_VERSION env variable
 # ENV WILDFLY_VERSION 10.1.0.Final
 # ENV WILDFLY_SHA1 9ee3c0255e2e6007d502223916cefad2a1a5e333
 
 ENV WILDFLY_VERSION 12.0.0.Final
 ENV WILDFLY_SHA1 b2039cc4979c7e50a0b6ee0e5153d13d537d492f 
-
 ENV JBOSS_HOME /opt/jboss/wildfly
-
 
 USER root
 
