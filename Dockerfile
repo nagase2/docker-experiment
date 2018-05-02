@@ -26,7 +26,8 @@ RUN cd $HOME \
     && chown -R jboss:0 ${JBOSS_HOME} \
     && chmod -R g+rw ${JBOSS_HOME}
 
-ADD build/libs/docker-experiment.war /opt/jboss/wildfly/standalone/deployments/
+
+ADD ./build/libs/docker-experiment.war /opt/jboss/wildfly/standalone/deployments/
 
 # ここで、予め用意しておいたstandalone.xmlに置き換える
 

@@ -13,3 +13,7 @@ docker run -p 8080:8080 -p 9990:9990 -it jboss/wildfly-admin2:latest /opt/jboss/
 
 ## 最低限の指定
 docker run -p 8080:8080 -p 9990:9990 -it jboss/wildfly-admin2:latest
+
+## docker compse
+docker-compose up
+

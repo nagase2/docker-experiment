@@ -2,7 +2,10 @@ version: '3'
 services:
   web:
     build: .
+    volumes:
+     - ./build/libs:/build/libs
     ports:
-     - "5000:5000"
+     - "8080:8080"
+     - "9990:9990"
   redis:
     image: "redis:alpine"
