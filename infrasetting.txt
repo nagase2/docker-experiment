@@ -1,0 +1,38 @@
+
+JCLI_CMD=__InstancePath__/bin/jboss-cli.sh
+JADMIN_PORT=__ManagementPort__
+
+JCLI_OPT="-c --controller=127.0.0.1:$JADMIN_PORT"
+
+$JCLI_CMD $JCLI_OPT <<EOF
+#
+# SETUP for java:global/earth-sap/properties
+#
+/subsystem=naming/binding=java\:global\/earth-sap\/properties:add(binding-type=external-context, cache=false, class=javax.naming.InitialContext, module=org.jboss.as.naming, environment=[destinationName=destination1, jco.client.ashost=172.31.194.21, jco.client.user=SAP903, jco.client.passwd=Batch1, jco.client.lang=en, jco.client.sysnr=00, jco.client.client=700, jco.destination.peak_limit=20, jco.destination.pool_capacity=10])
+/subsystem=naming/binding=java\:global\/earth-sap\/properties:read-resource
+
+#
+# SETUP for java:global/earth/properties
+#
+/subsystem=naming/binding=java\:global\/earth\/profile:add(binding-type=simple, value=development)
+/subsystem=naming/binding=java\:global\/earth\/profile:read-resource
+
+#
+# SETUP for java:global/jbpm-package/properties
+#
+/subsystem=naming/binding=java\:global\/jbpm-package\/profile:add(binding-type=simple, value=development)
+/subsystem=naming/binding=java\:global\/jbpm-package\/profile:read-resource
+
+#
+# SETUP for java:global/earth-rest-bpm-api/properties
+#
+/subsystem=naming/binding=java\:global\/earth-rest-bpm-api\/properties:add(binding-type=external-context, cache=false, class=javax.naming.InitialContext, module=org.jboss.as.naming, environment=[scheme=http, host=172.31.206.12, port=8180, contextPath="\/bpm\/restful", userName=jc580, password=jc580, active=1])
+/subsystem=naming/binding=java\:global\/earth-rest-bpm-api\/properties:read-resource
+
+#
+# SETUP for java:global/earth-rest-bpm-local/properties
+#
+/subsystem=naming/binding=java\:global\/earth-rest-bpm-local\/properties:add(binding-type=external-context, cache=false, class=javax.naming.InitialContext, module=org.jboss.as.naming, environment=[scheme=http, host=172.31.206.12, port=8180, contextPath="\/bpm\/bpRestful", userName=jc580, password=jc580, active=1])
+/subsystem=naming/binding=java\:global\/earth-rest-bpm-local\/properties:read-resource
+
+EOF

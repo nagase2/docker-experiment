@@ -1,6 +1,10 @@
-
+build
 bin
 .Dockerfile.*
 .classpath
 .sts4-cache
 logs/
+.gradle/
+.settings/org.eclipse.buildship.core.prefs
+.docker-compose.yml.swp
+.project
