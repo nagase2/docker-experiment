@@ -4,6 +4,7 @@ services:
     build: .
     volumes:
      - ./build/libs:/build/libs
+     - ./shared/logs:/opt/jboss/wildfly/standalone/log
     ports:
      - "8080:8080"
      - "9990:9990"

@@ -1,0 +1,26 @@
+version: '3'
+services:
+  postgres-db:
+    restart: always
+    build: ./pg_docker
+    ports:
+      - "15432:5432"
+    volumes:
+      - ./postgresql_data:/var/lib/postgresql
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres 
+      POSTGRES_DB: pgdb
+#    networks:
+#      - jast-net2
+
+
+#networks:
+#  jast-net2:
+#    ipam:
+#      driver: default
+#      config:
+#        - subnet: "192.168.3.0/24"
+
+
+
