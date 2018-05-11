@@ -8,3 +8,4 @@ logs/
 .settings/org.eclipse.buildship.core.prefs
 .docker-compose.yml.swp
 .project
+redmine/redmine_dbdata
