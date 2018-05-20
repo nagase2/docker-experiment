@@ -5,6 +5,7 @@ buildscript {
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.1.RELEASE")
     }
+    
 }
 
 apply plugin: 'java'
@@ -18,7 +19,12 @@ bootJar {
     baseName = 'gs-spring-boot'
     version =  '0.1.0'
 }
-
+ war {
+	archiveName 'hello-gradle.war'
+    baseName = 'gs-spring-boot'
+    version =  '0.1.0'
+   
+    }
 repositories {
     mavenCentral()
 }
