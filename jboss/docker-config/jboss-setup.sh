@@ -14,6 +14,7 @@ JBOSS_CONFIG=${2:-"$JBOSS_MODE.xml"}
 
 function wait_for_server() {
   until `$JBOSS_CLI -c ":read-attribute(name=server-state)" 2> /dev/null | grep -q running`; do
+    echo "＊＊＊＊JBOSS 起動まち＊＊＊＊"
     sleep 1
   done
 }

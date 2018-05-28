@@ -1,6 +1,6 @@
 
 # Use latest jboss/base-jdk:8 image as the base
-FROM jboss/wildfly:11.0.0.Final
+FROM jboss/wildfly:12.0.0.Final
 # Set the WILDFLY_VERSION env variable
 # ENV WILDFLY_VERSION 10.1.0.Final
 # ENV WILDFLY_SHA1 9ee3c0255e2e6007d502223916cefad2a1a5e333
@@ -25,8 +25,8 @@ RUN chmod +x /tmp/jboss-setup.sh \
 
 USER jboss
 
-RUN /opt/jboss/wildfly/bin/add-user.sh admin password --silent
-RUN /tmp/jboss-setup.sh
+RUN /opt/jboss/wildfly/bin/add-user.sh admin password --silent \
+&&  /tmp/jboss-setup.sh
 RUN rm -rf /opt/jboss/wildfly/standalone/configuration/standalone_xml_history/current/*
 
 # Expose the ports we're interested in
